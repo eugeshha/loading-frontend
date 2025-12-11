@@ -32,14 +32,9 @@ class LoadingApp {
   async registerServiceWorker() {
     if ("serviceWorker" in navigator) {
       try {
-        const registration =
-          await navigator.serviceWorker.register("/service.worker.js");
-        console.log("Service Worker registered:", registration);
+        await navigator.serviceWorker.register("/service.worker.js");
       } catch (error) {
-        console.log(
-          "Service Worker registration failed (expected in dev):",
-          error,
-        );
+        // Service Worker registration failed
       }
     }
   }
@@ -94,18 +89,14 @@ class LoadingApp {
 
   async loadData() {
     this.showSkeleton();
-    console.log("Loading data from:", `${API_URL}/api/data`);
     try {
       const response = await fetch(`${API_URL}/api/data`);
-      console.log("Response status:", response.status);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      console.log("Received data:", data);
       this.showContent(data);
     } catch (error) {
-      console.error("Error loading data:", error);
       if (!navigator.onLine) {
         this.showOfflineMessage();
       } else {
@@ -119,15 +110,12 @@ class LoadingApp {
   }
 
   showContent(data) {
-    console.log("showContent called with:", data);
     const list = document.getElementById("newsList");
     if (!list) {
-      console.error("newsList element not found");
       return;
     }
 
     if (data?.data?.items && Array.isArray(data.data.items)) {
-      console.log("Rendering", data.data.items.length, "items");
       list.innerHTML = "";
 
       data.data.items.forEach((item) => {
@@ -155,8 +143,6 @@ class LoadingApp {
 
         list.appendChild(newsItem);
       });
-    } else {
-      console.error("Invalid data structure:", data);
     }
 
     this.hideModal();
