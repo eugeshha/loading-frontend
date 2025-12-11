@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: #f5f5f5;
+}
+
+.page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 16px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  padding: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 18px;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #0066cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.news-item {
+  display: flex;
+  gap: 8px;
+}
+
+.news-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: #e0e0e0;
+}
+
+.news-text {
+  flex: 1;
+}
+
+.line {
+  height: 8px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  margin-bottom: 4px;
+}
+
+.line-short {
+  width: 60%;
+}
+
+.news-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.news-desc {
+  font-size: 13px;
+  color: #555;
+}
+
+.skeleton {
+  background-image: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 50%,
+    #e0e0e0 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-backdrop.visible {
+  display: flex;
+}
+
+.modal {
+  max-width: 360px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+.modal-body p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  margin-top: 8px;
+}
+
+.reload-btn {
+  font-size: 14px;
+  padding: 4px 10px;
+}
+
+
