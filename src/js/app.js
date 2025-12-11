@@ -5,7 +5,7 @@ const getEnv = (key, fallback) => {
   return fallback;
 };
 
-const API_URL = getEnv("API_URL", "http://localhost:3000");
+const API_URL = getEnv("API_URL", "https://loading-backend-rrby.onrender.com");
 const NODE_ENV = getEnv("NODE_ENV", "development");
 
 class LoadingApp {

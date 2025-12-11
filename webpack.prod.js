@@ -14,7 +14,7 @@ module.exports = merge(common, {
   plugins: [
     new webpack.DefinePlugin({
       "process.env.API_URL": JSON.stringify(
-        process.env.API_URL || "http://localhost:3000",
+        process.env.API_URL || "https://loading-backend-rrby.onrender.com",
       ),
       "process.env.NODE_ENV": JSON.stringify("production"),
     }),
